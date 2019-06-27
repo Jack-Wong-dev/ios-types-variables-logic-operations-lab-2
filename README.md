@@ -20,9 +20,13 @@ var grade1 = 7.0
 var grade2 = 9.0
 var grade3 = 5.0
 
-// your code here
-```
+var yourGrade:Double = 9.1
+var classAvg:Double = (grade1+grade2+grade3+yourGrade)/4.0
 
+var gradeComparison = (yourGrade > classAvg) ? "above average" : "below average"
+print(gradeComparison)
+
+```
 ***
 ## Question 2
 
@@ -31,7 +35,9 @@ You are given a number. Print even if the number is even or odd otherwise.
 ```swift
 let number = 2
 
-// your code here
+if(number%2 == 0){print("Even Number"}
+else{print("Odd Number"}
+
 ```
 
 ***
@@ -43,7 +49,10 @@ You are given two numbers `a` and `b`. Print `"divisible"` if `a` is divisible b
 var a = 12
 var b = 3
 
-// code here
+if(a mod b == 0){print("divisible")}
+else{print("not divisible")}
+
+
 ```
 
 ***
@@ -57,6 +66,15 @@ var b = 3
 var c = 2
 
 // your code here
+if(a == b || a == c || b == c)
+{
+    print("At least two variables have the same value")
+}
+else
+{
+    print("All the values are different")
+}
+
 ```
 
 ***
@@ -68,7 +86,16 @@ You are working on a smart-fridge. The smart-fridge knows how old the eggs and b
 var baconAge = 6 // the bacon is 6 days old
 var eggsAge = 12 // eggs are 12 days old
 
-// your code here
+if(eggsAge =< 21 && baconAge =< 7 ){
+    print("you can cook bacon and eggs")
+}elseif(baconAge > 7){
+    print("throw out bacon")
+}
+if(eggsAge > 21)
+{
+    print("throw out eggs)
+}
+
 ```
 
 ***
@@ -79,6 +106,9 @@ The above rule is valid except that every 100 years special rules apply. Years t
 
 ```swift
 let year = 2014
+
+var answer = (year % 4 == 0) || (year % 100 == 0 && year % 400 == 0 ) ? "Leap Year!" : "Not a leap year!"
+
 
 // your code here
 ```
@@ -91,7 +121,7 @@ If you use `random()` it will give you a random number within a specified range.
 ```swift
 let randomNum = Int.random(in: 0...100)
 
-// your code here
+var result = (randomNum % 2 == 0) ? "heads" : "tails"; print(result)
 ```
 
 Hint: use an if/else block along with the `%` operator
@@ -107,7 +137,18 @@ var b = 6
 var c = 3
 var d = 4
 
-// your code here
+var numArray = [a,b,c,d]
+var index = 0
+var minValue = numArray[0]
+
+while(index <= numArray.count-1){
+    if(minValue > numArray[index]){
+        minValue = numArray[index]
+    }
+    index+=1
+}
+
+print(minValue)
 ```
 
 ***
