@@ -34,10 +34,7 @@ You are given a number. Print even if the number is even or odd otherwise.
 
 ```swift
 let number = 2
-
-if(number%2 == 0){print("Even Number"}
-else{print("Odd Number"}
-
+var evenOrOdd = number % 2 == 0 ? "Even Number" : "Odd Number"; print(evenOrOdd)
 ```
 
 ***
@@ -49,9 +46,7 @@ You are given two numbers `a` and `b`. Print `"divisible"` if `a` is divisible b
 var a = 12
 var b = 3
 
-if(a mod b == 0){print("divisible")}
-else{print("not divisible")}
-
+var isDivisible = a % b == 0 ? "divisible" : "not divisible"; print(isDivisible)
 
 ```
 
@@ -65,16 +60,14 @@ var a = 2
 var b = 3
 var c = 2
 
-// your code here
 if(a == b || a == c || b == c)
 {
-    print("At least two variables have the same value")
+print("At least two variables have the same value")
 }
 else
 {
-    print("All the values are different")
+print("All the values are different")
 }
-
 ```
 
 ***
@@ -86,16 +79,18 @@ You are working on a smart-fridge. The smart-fridge knows how old the eggs and b
 var baconAge = 6 // the bacon is 6 days old
 var eggsAge = 12 // eggs are 12 days old
 
-if(eggsAge =< 21 && baconAge =< 7 ){
-    print("you can cook bacon and eggs")
-}elseif(baconAge > 7){
-    print("throw out bacon")
-}
-if(eggsAge > 21)
-{
-    print("throw out eggs)
-}
 
+if(eggsAge <= 21 && baconAge <= 7 ){
+    print("you can cook bacon and eggs")
+}
+else{
+    if(baconAge > 7){
+        print("throw out bacon")
+    }
+    if(eggsAge > 21){
+        print("throw out eggs")
+    }
+}
 ```
 
 ***
@@ -105,12 +100,11 @@ You are given a year, determine if it’s a leap year. A leap year is a year con
 The above rule is valid except that every 100 years special rules apply. Years that are divisible by 100 are not leap years if they are not also divisible by 400. For example 1900 was not a leap year, but 2000 was. Print `"Leap year!"` or `"Not a leap year!"` depending on the year you are provided.
 
 ```swift
-let year = 2014
+let year = 1996
 
-var answer = (year % 4 == 0) || (year % 100 == 0 && year % 400 == 0 ) ? "Leap Year!" : "Not a leap year!"
+var isLeapYear = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0 ) ? "Leap Year!" : "Not a leap year!"; print(isLeapYear)
 
 
-// your code here
 ```
 
 ***
@@ -138,14 +132,12 @@ var c = 3
 var d = 4
 
 var numArray = [a,b,c,d]
-var index = 0
 var minValue = numArray[0]
 
-while(index <= numArray.count-1){
-    if(minValue > numArray[index]){
-        minValue = numArray[index]
+for i in 0...numArray.count-1{
+    if(minValue > numArray[i]){
+        minValue = numArray[i]
     }
-    index+=1
 }
 
 print(minValue)
